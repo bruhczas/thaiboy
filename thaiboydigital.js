@@ -3,16 +3,16 @@ const axios = require('axios');
 const cors = require('cors');
 const app = express();
 
-// Middleware
-app.use(cors()); // Obsługuje CORS
-app.use(express.json()); // Parsowanie JSON
 
-// Endpoint /chat
+app.use(cors()); 
+app.use(express.json()); 
+
+
 app.post('/chat', async (req, res) => {
     const userInput = req.body.message;
 
     try {
-        // Wysyłanie zapytania do zewnętrznego API (Gemini)
+      
         const response = await axios.post('https://gemini.googleapis.com/v1/chat', {
             query: userInput,
         }, {
@@ -22,7 +22,7 @@ app.post('/chat', async (req, res) => {
             }
         });
         
-        // Zwrócenie odpowiedzi z API
+      
         res.send(response.data);
     } catch (error) {
         console.error(error);
@@ -30,7 +30,7 @@ app.post('/chat', async (req, res) => {
     }
 });
 
-// Uruchomienie serwera
+
 app.listen(3000, () => {
     console.log('Server running on http://localhost:3000');
 });
