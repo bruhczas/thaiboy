@@ -12,7 +12,7 @@ async function sendMessage() {
     document.getElementById('user-message').value = '';
 
     try {
-        const response = await fetch('/chat', {
+        const response = await fetch('https://draingang-ffdedd58e800.herokuapp.com/chat', {  // Zmieniony URL
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: userMessage }),
