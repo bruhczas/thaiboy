@@ -1,12 +1,18 @@
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors');
 const app = express();
-app.use(express.json());
 
+// Middleware
+app.use(cors()); // Obsługuje CORS
+app.use(express.json()); // Parsowanie JSON
+
+// Endpoint /chat
 app.post('/chat', async (req, res) => {
     const userInput = req.body.message;
 
     try {
+        // Wysyłanie zapytania do zewnętrznego API (Gemini)
         const response = await axios.post('https://gemini.googleapis.com/v1/chat', {
             query: userInput,
         }, {
@@ -15,6 +21,8 @@ app.post('/chat', async (req, res) => {
                 'Content-Type': 'application/json'
             }
         });
+        
+        // Zwrócenie odpowiedzi z API
         res.send(response.data);
     } catch (error) {
         console.error(error);
@@ -22,19 +30,7 @@ app.post('/chat', async (req, res) => {
     }
 });
 
+// Uruchomienie serwera
 app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+    console.log('Server running on http://localhost:3000');
 });
-
-const cors = require('cors');
-const express = require('express');
-const app = express();
-
-app.use(cors()); // Dodaje obsługę CORS
-app.use(express.json());
-
-app.post('/chat', (req, res) => {
-    res.json({ response: "Hello from backend!" });
-});
-
-app.listen(3000, () => console.log('Server running on http://localhost:3000'));
