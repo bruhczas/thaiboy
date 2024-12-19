@@ -3,17 +3,17 @@ async function sendMessage() {
 
     if (!userMessage.trim()) return;
 
-    // Add user message to chat
+    
     const chatBox = document.getElementById('chat-box');
     const userMessageDiv = document.createElement('div');
     userMessageDiv.className = 'message user';
     userMessageDiv.textContent = userMessage;
     chatBox.appendChild(userMessageDiv);
 
-    // Clear input
+   
     document.getElementById('user-message').value = '';
 
-    // Send message to backend
+    
     try {
         const response = await fetch('/chat', {
             method: 'POST',
