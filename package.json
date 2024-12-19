@@ -3,24 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node prawdziwyserwer.js"
   },
   "keywords": ["draingang", "heroku"],
   "author": "",
-  "description": ""
+  "description": "",
   "dependencies": {
     "express": "^4.9.8"
   },
-  
- 
-
-}
-
-
-
-"scripts": {
-    "start": "prawdziwyserwer.js"
-}
-"engines": {
+  "engines": {
     "node": "22.x"
+  }
 }
