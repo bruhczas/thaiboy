@@ -1,0 +1,97 @@
+h1{
+	font-family: "Montserrat", sans-serif;
+	font-weight: <weight>;
+	font-style: normal;
+	clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+	text-indent: 840px;
+	color: white;
+	text-align; center;
+	
+}
+
+body {
+	  background-image: url('namiot.jpg');
+	  background-repeat: no-repeat;
+	  background-attachment: fixed;
+	  background-size:cover;
+	  background-size: 100% 100%;
+	}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+#chat-container {
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background: #fafafa;
+    border-bottom: 1px solid #ddd;
+}
+
+#chat-box .message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 70%;
+}
+
+#chat-box .user {
+    background: #d1f7c4;
+    align-self: flex-end;
+}
+
+#chat-box .bot {
+    background: #e4e4e7;
+    align-self: flex-start;
+}
+
+#chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background: #f9f9f9;
+}
+
+#chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#chat-input button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#chat-input button:hover {
+    background: #0056b3;
+}
