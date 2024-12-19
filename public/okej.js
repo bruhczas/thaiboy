@@ -3,17 +3,14 @@ async function sendMessage() {
 
     if (!userMessage.trim()) return;
 
-    
     const chatBox = document.getElementById('chat-box');
     const userMessageDiv = document.createElement('div');
     userMessageDiv.className = 'message user';
     userMessageDiv.textContent = userMessage;
     chatBox.appendChild(userMessageDiv);
 
-   
     document.getElementById('user-message').value = '';
 
-    
     try {
         const response = await fetch('/chat', {
             method: 'POST',
